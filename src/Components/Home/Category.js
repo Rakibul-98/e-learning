@@ -2,7 +2,7 @@ import React from 'react';
 
 const Category = () => {
 
-    const benefits =[
+    const categories =[
         {
             id:1,
             img:"https://i.ibb.co/Kzbk9j6/wd.jpg",
@@ -52,6 +52,19 @@ const Category = () => {
             <div className='text-center'>
                 <h1 className='text-5xl'>Our Course Categories</h1>
                 <p className=' my-10'>These are services that are provided by individuals with specialized skills or knowledge. <br />Some common service categories include:</p>
+            </div>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 w-11/12 mx-auto'>
+                {
+                    categories.map(c=>
+                        <div className='md:w-10/12 mx-auto my-5 group'>
+                            <img className='h-72 w-full' src={c.img} alt={c.title} />
+                            <div className='bg-slate-100 p-2 group-hover:bg-red-600 group-hover:text-white'>
+                                <h3 className='text-2xl my-2'>{c.title}</h3>
+                                <p className='text-sm'>{c.text.length<150 ? c.text :c.text.slice(0,150)+" . . ."}</p>
+                                <p className='text-fuchsia-500 font-semibold text-lg my-2'>{c.course} Courses</p>
+                            </div>
+                        </div>)
+                }
             </div>
         </div>
     );
