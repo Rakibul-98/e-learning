@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../Header/Header';
 import Benefit from './Benefit';
 import Category from './Category';
+import Stats from './Stats';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Header/>
             <Benefit/>
             <Category/>
+            <Stats/>
         </div>
     );
 };
