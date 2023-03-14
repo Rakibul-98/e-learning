@@ -1,13 +1,14 @@
 import React from 'react';
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 
-const Category = () => {
 
-    const categories =[
+const FeatureCourse = () => {
+
+    const trending =[
         {
             id:1,
             img:"https://i.ibb.co/Kzbk9j6/wd.jpg",
-            title:"Web Development",
+            title:"Art & Craft",
             text:"Web development refers to the process of creating websites and web applications. It involves several different aspects such as web design, web content development, client-side scripting, server-side scripting, network security configuration, and database management.",
             course:"120",
         },
@@ -45,24 +46,80 @@ const Category = () => {
             title:"IT and Support",
             text:"IT support is essential in today's technology-driven world, as businesses and individuals rely on computers and other digital devices for communication, productivity, and entertainment. IT support can be provided in a variety of settings, including in-house IT departments",
             course:"50",
+        },
+        {
+            id:7,
+            img:"https://i.ibb.co/yytfv6M/drawing.jpg",
+            title:"Drawing and Illustration",
+            text:"Drawing is the act of creating images with lines and shading, while illustration refers to the creation of images for use in books, magazines, advertising, or other media. ",
+            course:"200",
+        },
+        {
+            id:8,
+            img:"https://i.ibb.co/FqWhf40/web-design.jpg",
+            title:"Web Design",
+            text:"Web design has become increasingly important as more businesses and individuals rely on the internet for communication, commerce, and entertainment. A well-designed website can help to build brand awareness, drive traffic and conversions, and enhance the user experience.",
+            course:"130",
+        },
+        {
+            id:9,
+            img:"https://i.ibb.co/3R542wq/it.jpg",
+            title:"IT and Support",
+            text:"IT support is essential in today's technology-driven world, as businesses and individuals rely on computers and other digital devices for communication, productivity, and entertainment. IT support can be provided in a variety of settings, including in-house IT departments",
+            course:"50",
+        }
+    ]
+
+    const navs =[
+        {
+            id:1,
+            name:"All",
+            link:"#",
+        },
+        {
+            id:2,
+            name:"Web Development",
+            link:"#",
+        },
+        {
+            id:3,
+            name:"Design",
+            link:"#",
+        },
+        {
+            id:4,
+            name:"Photography",
+            link:"#",
+        },
+        {
+            id:5,
+            name:"Marketing",
+            link:"#",
         }
     ]
 
     return (
         <div>
             <div className='text-center'>
-                <h1 className='text-5xl'>Our Course Categories</h1>
+                <h1 className='text-5xl'>Our Trending Courses</h1>
                 <p className=' my-10'>These are services that are provided by individuals with specialized skills or knowledge. <br />Some common service categories include:</p>
             </div>
+            <nav className='text-center mb-10'>
+                {
+                    navs.map(n=>
+                        <a className='mx-5 font-semibold text-blue-700 hover:text-black' key={n.id} href={n.link}>{n.name}</a>
+                        )
+                }
+            </nav>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 w-10/12 md:w-11/12 mx-auto'>
                 {
-                    categories.map(c=>
+                    trending.map(t=>
                         <div className='md:w-10/12 mx-auto my-5 group'>
-                            <img className='h-72 w-full' src={c.img} alt={c.title} />
+                            <img className='h-72 w-full' src={t.img} alt={t.title} />
                             <div className='bg-slate-100 p-2 group-hover:bg-red-600 group-hover:text-white'>
-                                <h3 className='text-2xl my-2'>{c.title}</h3>
-                                <p className='text-sm'>{c.text.length<150 ? c.text :c.text.slice(0,150)+" . . ."}</p>
-                                <p className='flex text-fuchsia-500 font-semibold text-lg my-2'><span className='my-auto mr-2 text-2xl'><MdOutlineSlowMotionVideo/></span>{c.course}+ Courses</p>
+                                <h3 className='text-2xl my-2'>{t.title}</h3>
+                                <p className='text-sm'>{t.text.length<150 ? t.text :t.text.slice(0,150)+" . . ."}</p>
+                                <p className='flex text-fuchsia-500 font-semibold text-lg my-2'><span className='my-auto mr-2 text-2xl'><MdOutlineSlowMotionVideo/></span>{t.course}+ Courses</p>
                             </div>
                         </div>)
                 }
@@ -71,4 +128,4 @@ const Category = () => {
     );
 };
 
-export default Category;
+export default FeatureCourse;
